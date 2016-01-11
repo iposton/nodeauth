@@ -2,14 +2,7 @@ var mongoose = require('mongoose');
 var bcrypt = require('bcryptjs');
 
 mongoose.connect(process.env.MONGOLAB_URI);
-// development: {
-// 		port: 3000,
-// 		db: 'mongodb://localhost/nodeauth'	
-// 	},
-// 	production: {
-// 		port: process.env.PORT,
-// 		db: process.env.MONGOLAB_URI
-// 	}
+//mongoose.connect('mongodb://localhost/nodeauth');
 
 var db = mongoose.connection;
 
