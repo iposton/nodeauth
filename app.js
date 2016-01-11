@@ -100,6 +100,10 @@ if (app.get('env') === 'development') {
   });
 }
 
+if (process.env.PORT === 'production') {
+    dbURI= process.env.MONGOLAB_URI;
+}
+
 // production error handler
 // no stacktraces leaked to user
 app.use(function(err, req, res, next) {
