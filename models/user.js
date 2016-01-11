@@ -1,7 +1,8 @@
 var mongoose = require('mongoose');
 var bcrypt = require('bcryptjs');
-
+// mongoose connect for heroku
 mongoose.connect(process.env.MONGOLAB_URI);
+//Uncomment code below to allow for a local connection to mongodb
 //mongoose.connect('mongodb://localhost/nodeauth');
 
 var db = mongoose.connection;
