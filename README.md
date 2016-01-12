@@ -30,7 +30,7 @@ This app allows a user to register their account info. After you are registered 
 <h3>Setup MongoDB locally for mac</h3>
 <ul>
 <li>Open two terminal windows. run: <code>sudo mongod</code> in one window and run: <code>mongo</code> in the other teminal window at the same time. (mongod needs to run for mongo command to work)</li>
-<li>Create a db run: <code>use nodeauth</code></li>
+<li>In mongo terminal window Create a db run: <code>use nodeauth</code></li>
 <li>Create a collection in the db run: <code>db.creatCollection('users')</code></li>
 <li>To see a list of all dbs run: <code>show dbs</code> (nodeauth should be in this list)</li>
 <li>now you should be able to connect to this db from the codebase</li>
