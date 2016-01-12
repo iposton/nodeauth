@@ -1,5 +1,5 @@
-# <a href="https://nodeauth-app.herokuapp.com/users/login">Nodeauth</a> - User authentication and password encryption app
-
+#<a href="https://nodeauth-app.herokuapp.com/users/login">Nodeauth</a> - User authentication and password encryption app 
+<a href="https://codeclimate.com/github/iposton/nodeauth"><img src="https://codeclimate.com/github/iposton/nodeauth/badges/gpa.svg" /></a><br>
 This app allows a user to register their account info. After you are registered you can log in and go to the members area. User info and encrypted password is stored in mongodb. This code makes it possible to deploy this app live to heroku. You can demo <a href="https://nodeauth-app.herokuapp.com/users/login">Nodeauth here.</a>
 
 <h3>This app uses the following technologies</h3>
