@@ -42,7 +42,8 @@ The db that was created locally will not work on heroku. An add-on needs to be a
 <li>Stand in the root of the app and Create a heroku app run: <code>heroku create</code></li>
 <li>Add mongolab and run: <code> heroku addons:add mongolab</code></li>
 <li>Log in to heroku click on the new app created click on mongolabs add on and click on Users add a database user with a dbusername and dbpassword.</li>
-<li>Configure your dbusername and dbpassword in heroku to keep it private run: <code>heroku config:set MONGOLAB_URI=" mongodb://dbuser:dbpassword@something.mongolab.com:39175/heroku_something"</code>
+<li>Configure your dbusername and dbpassword in heroku to keep it private run: <code>heroku config:set MONGOLAB_URI=" mongodb://dbuser:dbpassword@something.mongolab.com:39175/heroku_something"</code></li>
+<li>Configure the dbusername and dbpassword in heroku and then use the MONGOLAB_URI environment variable like I did in my code because you do not want to push your dbusername and dbpassword live to github.</li>
 <li>Make a change in code commit and push to github then run: <code>git push heroku master</code> and deploy the app.</li>
 <li>After it's done deploying run: <code>heroku open</code> to see the app live.
 </ul>
