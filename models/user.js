@@ -1,9 +1,13 @@
 var mongoose = require('mongoose');
 var bcrypt = require('bcryptjs');
-// mongoose connect for heroku
-mongoose.connect(process.env.MONGOLAB_URI);
-//Uncomment code below to allow for a local connection to mongodb
-//mongoose.connect('mongodb://localhost/nodeauth');
+var env = process.env.NODE_ENV || 'development';
+
+if (env === 'production') {
+	// mongoose connect for heroku
+	mongoose.connect(process.env.MONGOLAB_URI);
+} else {
+	mongoose.connect('mongodb://localhost/nodeauth');
+}
 
 var db = mongoose.connection;
 
@@ -32,30 +36,32 @@ var UserSchema = mongoose.Schema({
 
 var User = module.exports = mongoose.model('User', UserSchema);
 
-module.exports.comparePassword = function(candidatePassword, hash, callback){
-	bcrypt.compare(candidatePassword, hash, function(err, isMatch){
-		if(err) return callback(err);
+module.exports.comparePassword = function(candidatePassword, hash, callback) {
+	bcrypt.compare(candidatePassword, hash, function(err, isMatch) {
+		if (err) return callback(err);
 		callback(null, isMatch);
 	});
 }
 
-module.exports.getUserById = function(id, callback){
+module.exports.getUserById = function(id, callback) {
 	User.findById(id, callback);
 }
 
-module.exports.getUserByUsername = function(username, callback){
-	var query = {username: username};
+module.exports.getUserByUsername = function(username, callback) {
+	var query = {
+		username: username
+	};
 	User.findOne(query, callback);
 }
 
 
 module.exports.createUser = function(newUser, callback) {
 	bcrypt.hash(newUser.password, 10, function(err, hash) {
-		if(err) throw err;
+		if (err) throw err;
 		// Set hash pw
 		newUser.password = hash;
 		//Create user
 		newUser.save(callback);
 	});
-	
+
 }
