@@ -1,0 +1,40 @@
+extends layout
+
+block content
+	.show
+		h1=post.title 
+	span.
+	p.meta Posted in 
+		a(href='/categories/show/#{post.category}') #{post.category} 
+		span.
+		by #{post.author} on #{moment(post.date).format('MMMM Do YYYY, h:mm a')}
+	img(src="/images/uploads/#{post.mainimage}", class="big-image")
+	!=post.body, 400
+	br
+	hr
+	if post.comments
+		h3 Comments
+		each comment, i in post.comments
+			.comment.well.well-lg
+				p.comment-name #{comment.name} | #{moment(comment.commentdate).format('MMMM Do YYYY, h:mm a')}
+				p.comment-text #{comment.body}
+				
+		br
+	h3 Add Comment
+	if errors
+		ul.errors
+			each error, i in errors
+				li.alert.alert-danger #{error.msg}
+	form.comment-form(method='post', action='/posts/addcomment')
+		input(name='postid', type='hidden', value='#{post._id}')
+		.form-group
+			label Name
+			input.form-control(type='text', name='name')
+		.form-group
+			label Email
+			input.form-control(type='email', name='email')
+		.form-group
+			label Comment
+			textarea.form-control(name='body', id='body')
+		br
+		input.form-control(type='submit', name='submit', value='Add Comment', class='btn btn-default')

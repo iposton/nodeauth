@@ -2,9 +2,57 @@ body {
   padding: 50px;
   font-family: arial;
 }
+body {
+	font-family: arial;
+	font-size:15px;
+	background:#f4f4f4;
+	color:#666;
+}
+
+
+.container.content{
+	border:1px solid #ccc;
+	width: 1000px;
+	margin-top: 30px;
+	background: #fff;
+	padding-bottom: 20px;
+}
+
+.clr {
+	clear:both;
+}
+
+ul{
+	padding:0;
+	margin:0;
+}
+
+h1, h2, h3, p{
+	padding:5px 0;
+	margin-bottom:0;
+}
+
+p{
+	margin:0;
+}
+
+a{
+	color:#404137;
+	text-decoration: none;
+}
 
 a {
   color: #00B7FF;
+}
+
+.navbar-default {
+	background: #fff;
+	
+}
+
+nav li{
+	float:left;
+	list-style: none;
 }
 
 ul.success li, ul.info li, ul.error li {
@@ -26,4 +74,34 @@ ul.info li {
 	background-color: #d9edf7;
 	border-color: #bce8f1;
 
+}
+
+.logo  {
+	margin-top: 5px;
+	width: 30%;
+}
+
+.meta {
+	padding: 7px;
+	border: 1px solid #ccc;
+	background: #ccc;
+}
+
+a.more {
+	display: block;
+	background: #404137;
+	color: #fff;
+	padding: 10px;
+	width: 100px;
+	margin-top: 20px;
+}
+
+.post {
+	border-bottom: 1px solid #ccc;
+	padding-bottom: 20px;
+}
+
+.post img,
+.big-image {
+	width: 100%;
 }
