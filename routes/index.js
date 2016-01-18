@@ -1,7 +1,13 @@
 var express = require('express');
 var router = express.Router();
 var mongo = require('mongodb');
-var dbMonk = require('monk')('localhost/nodeauth');
+var env = process.env.NODE_ENV || 'development';
+if (env === 'production') {
+  // mongoose connect for heroku
+  var dbMonk = require('monk')(process.env.MONGOLAB_URI);
+} else {
+  var dbMonk = require('monk')('localhost/nodeauth');
+}
 
 
 /* Members page  */
