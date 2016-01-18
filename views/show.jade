@@ -16,7 +16,9 @@ block content
 		h3 Comments
 		each comment, i in post.comments
 			.comment.well.well-lg
-				p.comment-name #{comment.name} | #{moment(comment.commentdate).format('MMMM Do YYYY, h:mm a')}
+				span.p.comment-name #{comment.name} 
+				span.
+					posted a comment on #{moment(comment.commentdate).format('MMMM Do YYYY, h:mm a')}
 				p.comment-text #{comment.body}
 				
 		br

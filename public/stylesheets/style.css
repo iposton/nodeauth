@@ -105,3 +105,7 @@ a.more {
 .big-image {
 	width: 100%;
 }
+
+.comment-name {
+	font-weight: bold;
+}
