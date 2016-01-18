@@ -12,7 +12,7 @@ block content
           p.meta Posted in 
             a(href='/categories/show/#{post.category}') #{post.category} 
             span.
-            by #{post.author} on #{moment(post.date).format('MMMM Do YYYY, h:mm a')}
+              by #{post.author} on #{moment(post.date).format('MMMM Do YYYY, h:mm a')}
           img(src="/images/uploads/#{post.mainimage}")
           !=truncateText(post.body, 400)
           a.more(href='/posts/show/#{post._id}') Read More
